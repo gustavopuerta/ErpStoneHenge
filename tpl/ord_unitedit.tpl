@@ -116,13 +116,13 @@
 {/if}
 <tr class="cell_reccolor_lightblue_01b">
     <td>Name:*</td>
-    <td><input type="text" value="{$ord_unit.name}" name="edit[name]" size="20" maxlength="50"{$lock_form}></td>
+    <td><input type="text" style="border:1px solid #000000" value="{$ord_unit.name}" name="edit[name]" size="20" maxlength="50"{$lock_form}></td>
 </tr>
 <tr class="cell_reccolor_lightblue_01a">
     <td>Application:*</td>
     <td>
         {if $lock_select==''}
-            <select name="edit[id_application]" onChange="reload();">
+            <select name="edit[id_application]" onChange="reload();" style="border:1px solid #000000">
                 <option value=''></option>
                 {section name=d loop=$application}
                 <option value="{$application[d].id}" {if $ord_unit.id_application eq $application[d].id}selected{/if}>{$application[d].name}
@@ -140,7 +140,7 @@
     <td>Default edge:</td>
     <td>
         {if $lock_select==''}
-            <select name="edit[id_edge]">
+            <select name="edit[id_edge]" style="border:1px solid #000000">
                 <option value=''></option>
                 {section name=ed loop=$edge}
                 <option value="{$edge[ed].id}" {if $uid<>''}{if $ord_unit.id_edge eq $edge[ed].id}selected{/if}{else}{if $edge[ed].id == 20}selected{/if}{/if}>{$edge[ed].name}
